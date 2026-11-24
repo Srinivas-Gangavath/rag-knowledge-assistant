@@ -1,0 +1,88 @@
+{
+  "offline_retrieval_baseline": {
+    "description": "Deterministic offline ranking baseline on rag_eval.json using local hash n-gram embedder and similarity_threshold=0.0",
+    "dataset": "rag_eval.json",
+    "dataset_version": "1.1.2",
+    "embedder": "local",
+    "embedding_model": "local-hash-ngram",
+    "similarity_threshold": 0.0,
+    "top_k": 5,
+    "candidate_pool_k": 5,
+    "chunk_size": 700,
+    "chunk_overlap": 100,
+    "chunking_strategy": "fixed_word_window",
+    "metrics": {
+      "questions_evaluated": 29,
+      "grounded_questions": 24,
+      "no_context_questions": 5,
+      "hit_at_1": 0.8333333333333334,
+      "hit_at_3": 0.9166666666666666,
+      "hit_at_5": 0.9166666666666666,
+      "recall_at_5": 0.9166666666666666,
+      "mrr": 0.875,
+      "mean_reciprocal_rank": 0.875,
+      "span_hit_at_5": 0.3333333333333333,
+      "no_context_correct": 0,
+      "no_context_total": 5,
+      "no_context_false_retrieval": 5
+    },
+    "tolerances": {
+      "hit_at_1": 0.0,
+      "hit_at_3": 0.0,
+      "hit_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "mrr": 0.0
+    }
+  },
+  "offline_lexical_baseline": {
+    "description": "Deterministic offline ranking baseline on rag_eval_lexical.json using local hash n-gram embedder and similarity_threshold=0.0",
+    "dataset": "rag_eval_lexical.json",
+    "dataset_version": "1.1.3-lexical",
+    "embedder": "local",
+    "embedding_model": "local-hash-ngram",
+    "similarity_threshold": 0.0,
+    "top_k": 5,
+    "candidate_pool_k": 5,
+    "metrics": {
+      "questions_evaluated": 10,
+      "grounded_questions": 10,
+      "no_context_questions": 0,
+      "hit_at_1": 0.8,
+      "hit_at_3": 0.8,
+      "hit_at_5": 0.9,
+      "recall_at_5": 0.9,
+      "mrr": 0.825,
+      "mean_reciprocal_rank": 0.825
+    },
+    "tolerances": {
+      "hit_at_1": 0.0,
+      "hit_at_3": 0.0,
+      "hit_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "mrr": 0.0
+    }
+  },
+  "production_reference": {
+    "description": "Historical production reference using Gemini gemini-embedding-2 at similarity_threshold=0.7 (requires live Gemini API key)",
+    "dataset": "rag_eval.json",
+    "dataset_version": "1.1.2",
+    "embedder": "gemini",
+    "embedding_model": "gemini-embedding-2",
+    "similarity_threshold": 0.7,
+    "top_k": 5,
+    "candidate_pool_k": 5,
+    "metrics": {
+      "questions_evaluated": 29,
+      "grounded_questions": 24,
+      "no_context_questions": 5,
+      "hit_at_1": 0.9583333333333334,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "recall_at_5": 1.0,
+      "span_hit_at_5": 0.6666666666666666,
+      "no_context_correct": 5,
+      "no_context_total": 5,
+      "no_context_false_retrieval": 0
+    }
+  }
+}

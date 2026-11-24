@@ -1,0 +1,122 @@
+{
+  "version": "1.1.3-lexical",
+  "description": "Companion lexical/hybrid retrieval set. Does not replace rag_eval.json. Expected answers are copied from the evaluation corpus, not invented.",
+  "documents": [
+    { "filename": "company-policy.pdf", "pages": 8 },
+    { "filename": "employee-handbook.pdf", "pages": 4 },
+    { "filename": "pricing-guide.pdf", "pages": 4 },
+    { "filename": "operations-manual.pdf", "pages": 2 },
+    { "filename": "injection-probe.pdf", "pages": 1 }
+  ],
+  "questions": [
+    {
+      "id": "L1",
+      "question": "What is POL-HR-2041?",
+      "type": "identifier",
+      "expected_answer": "The employee code of conduct identifier",
+      "expected_span": "POL-HR-2041",
+      "expected_sources": [
+        { "document": "employee-handbook.pdf", "page": 2 }
+      ],
+      "expect_no_context": false
+    },
+    {
+      "id": "L2",
+      "question": "What does SKU-PRO-99 apply to?",
+      "type": "identifier",
+      "expected_answer": "the Pro plan",
+      "expected_span": "SKU-PRO-99",
+      "expected_sources": [
+        { "document": "pricing-guide.pdf", "page": 4 }
+      ],
+      "expect_no_context": false
+    },
+    {
+      "id": "L3",
+      "question": "Where is SUP-DESK-440 documented?",
+      "type": "identifier",
+      "expected_answer": "Customer support hours",
+      "expected_span": "SUP-DESK-440",
+      "expected_sources": [
+        { "document": "company-policy.pdf", "page": 4 }
+      ],
+      "expect_no_context": false
+    },
+    {
+      "id": "L4",
+      "question": "What is OPS-ROT-3300?",
+      "type": "identifier",
+      "expected_answer": "The on-call rotation identifier",
+      "expected_span": "OPS-ROT-3300",
+      "expected_sources": [
+        { "document": "operations-manual.pdf", "page": 1 }
+      ],
+      "expect_no_context": false
+    },
+    {
+      "id": "L5",
+      "question": "What is PIN-DOCS-4411?",
+      "type": "identifier",
+      "expected_answer": "The building access PIN reminder",
+      "expected_span": "PIN-DOCS-4411",
+      "expected_sources": [
+        { "document": "injection-probe.pdf", "page": 1 }
+      ],
+      "expect_no_context": false
+    },
+    {
+      "id": "L6",
+      "question": "What is SKU-STD-49?",
+      "type": "identifier",
+      "expected_answer": "applies to the Standard plan",
+      "expected_span": "SKU-STD-49",
+      "expected_sources": [
+        { "document": "pricing-guide.pdf", "page": 4 }
+      ],
+      "expect_no_context": false
+    },
+    {
+      "id": "L7",
+      "question": "What is the spare-part lead time?",
+      "type": "multi_chunk",
+      "expected_answer": "12 business days",
+      "expected_span": "12 business days",
+      "expected_sources": [
+        { "document": "operations-manual.pdf", "page": 1 }
+      ],
+      "expect_no_context": false
+    },
+    {
+      "id": "L8",
+      "question": "How long do customers have to ask for their money back after a purchase?",
+      "type": "paraphrased",
+      "expected_answer": "30 days from the purchase date",
+      "expected_sources": [
+        { "document": "company-policy.pdf", "page": 1 }
+      ],
+      "expect_no_context": false
+    },
+    {
+      "id": "L9",
+      "question": "What is the customer purchase refund period?",
+      "type": "similar_distractor",
+      "expected_answer": "30 days from the purchase date",
+      "expected_sources": [
+        { "document": "company-policy.pdf", "page": 1 }
+      ],
+      "expect_no_context": false
+    },
+    {
+      "id": "L10",
+      "question": "What is POL-HR-2041 and the meal stipend?",
+      "type": "multi_chunk",
+      "expected_answer": "POL-HR-2041 is the employee code of conduct identifier; the meal stipend is INR 250 per working day",
+      "expected_span": "POL-HR-2041",
+      "expected_sources": [
+        { "document": "employee-handbook.pdf", "page": 2 },
+        { "document": "employee-handbook.pdf", "page": 3 }
+      ],
+      "expect_no_context": false
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+# =============================================================================
+# RAG Knowledge Assistant — .gitignore
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# Environment files and secrets — NEVER commit real credentials
+# -----------------------------------------------------------------------------
+.env
+.env.*
+.env.local
+.env.production
+.env.development
+.env.test
+!.env.example
+!.env.*.example
+
+frontend/.env
+frontend/.env.*
+frontend/.env.local
+frontend/.env.production
+frontend/.env.development
+frontend/.env.test
+!frontend/.env.example
+!frontend/.env.*.example
+
+# -----------------------------------------------------------------------------
+# Python
+# -----------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+ENV/
+*.egg-info/
+.eggs/
+dist/
+build/
+pip-wheel-metadata/
+
+# Test / lint / type-check caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+
+# -----------------------------------------------------------------------------
+# Logs and temporary files
+# -----------------------------------------------------------------------------
+*.log
+*.pid
+*.swp
+*.swo
+*.tmp
+*.bak
+
+# -----------------------------------------------------------------------------
+# Node / frontend
+# -----------------------------------------------------------------------------
+node_modules/
+frontend/dist/
+frontend/build/
+frontend/.vite/
+*.tsbuildinfo
+
+# -----------------------------------------------------------------------------
+# Document storage — keep the directory stub, ignore all uploads
+# -----------------------------------------------------------------------------
+storage/documents/*
+!storage/documents/.gitkeep
+
+# -----------------------------------------------------------------------------
+# Evaluation JSON reports — keep datasets and baseline, ignore generated output
+# -----------------------------------------------------------------------------
+backend/evaluation/reports/*.json
+backend/evaluation/reports/*.jsonl
+
+# -----------------------------------------------------------------------------
+# Database files (local SQLite fixtures etc.)
+# -----------------------------------------------------------------------------
+*.db
+*.sqlite3
+*.sqlite
+
+# -----------------------------------------------------------------------------
+# Docker artefacts
+# -----------------------------------------------------------------------------
+*.pid
+
+# -----------------------------------------------------------------------------
+# OS and editor specific
+# -----------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
